@@ -517,4 +517,17 @@ INSERT INTO poc.disciplinas_requisitos (id_disciplina, id_requisito)
     
 INSERT INTO poc.disciplinas_requisitos (id_disciplina, id_requisito)
     VALUES ('025321', '021270');
+
+CREATE TABLE poc.alunos (
+	id INT NOT NULL AUTO_INCREMENT COMMENT 'chave primária',
+	nome varchar(100) NOT NULL,
+	CONSTRAINT alunos_PK PRIMARY KEY (id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_general_ci ;
+
+ALTER TABLE poc.alunos ADD username VARCHAR(100) NOT NULL ;
+ALTER TABLE poc.alunos ADD password varchar(100) NOT NULL ;
+
     
