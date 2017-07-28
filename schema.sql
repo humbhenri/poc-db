@@ -552,4 +552,28 @@ VALUES ('professor', 'ROLE_PROFESSOR');
 INSERT INTO user_roles (username, role)
 VALUES ('coordenador', 'ROLE_COORDENADOR');
 
+CREATE TABLE poc.turmas (
+   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `disciplina` varchar(100) NOT NULL,
+  `semestre` int(11) NOT NULL,
+  `capacidade` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  CONSTRAINT fk_disciplina FOREIGN KEY (disciplina) REFERENCES poc.disciplinas (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+/*
+CREATE TABLE poc.alunos (
+	id BIGINT NOT NULL AUTO_INCREMENT,
+	nome varchar(100) NOT NULL,
+	username varchar(45) NOT NULL,
+	CONSTRAINT alunos_PK PRIMARY KEY (id),
+	CONSTRAINT alunos_users_FK FOREIGN KEY (username) REFERENCES poc.users (username)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8;
+
+INSERT INTO poc.alunos
+(id, nome, username)
+VALUES(1, 'Fulano da Silva', 'aluno');
+*/
