@@ -1,5 +1,6 @@
 CREATE DATABASE IF NOT EXISTS `poc`;
-CREATE TABLE `disciplinas` (
+use poc;
+CREATE TABLE poc.disciplinas (
   `id` varchar(100) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `creditos` int(11) NOT NULL,
@@ -9,7 +10,7 @@ CREATE TABLE `disciplinas` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-CREATE TABLE `disciplinas_requisitos` (
+CREATE TABLE poc.disciplinas_requisitos (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_disciplina` varchar(100) NOT NULL,
   `id_requisito` varchar(100) NOT NULL,
@@ -17,8 +18,8 @@ CREATE TABLE `disciplinas_requisitos` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_disciplinas_requisitos_1_idx` (`id_disciplina`),
   KEY `fk_disciplinas_requisitos_2_idx` (`id_requisito`),
-  CONSTRAINT `fk_disciplinas_requisitos_1` FOREIGN KEY (`id_disciplina`) REFERENCES `disciplinas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_disciplinas_requisitos_2` FOREIGN KEY (`id_requisito`) REFERENCES `disciplinas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_disciplinas_requisitos_1` FOREIGN KEY (`id_disciplina`) REFERENCES poc.disciplinas (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_disciplinas_requisitos_2` FOREIGN KEY (`id_requisito`) REFERENCES poc.disciplinas (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 set names utf8;
@@ -523,7 +524,8 @@ CREATE  TABLE poc.users (
   username VARCHAR(45) NOT NULL ,
   password VARCHAR(45) NOT NULL ,
   enabled TINYINT NOT NULL DEFAULT 1 ,
-  PRIMARY KEY (username));
+  PRIMARY KEY (username))
+  ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE poc.user_roles (
   user_role_id int(11) NOT NULL AUTO_INCREMENT,
@@ -532,7 +534,8 @@ CREATE TABLE poc.user_roles (
   PRIMARY KEY (user_role_id),
   UNIQUE KEY uni_username_role (role,username),
   KEY fk_username_idx (username),
-  CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES poc.users (username));
+  CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES poc.users (username))
+  ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO users(username,password,enabled)
 VALUES ('aluno','aluno', true);
@@ -562,7 +565,6 @@ CREATE TABLE poc.turmas (
   CONSTRAINT fk_disciplina FOREIGN KEY (disciplina) REFERENCES poc.disciplinas (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*
 CREATE TABLE poc.alunos (
 	id BIGINT NOT NULL AUTO_INCREMENT,
 	nome varchar(100) NOT NULL,
@@ -576,4 +578,3 @@ DEFAULT CHARSET=utf8;
 INSERT INTO poc.alunos
 (id, nome, username)
 VALUES(1, 'Fulano da Silva', 'aluno');
-*/
