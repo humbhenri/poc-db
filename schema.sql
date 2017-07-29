@@ -595,3 +595,13 @@ CREATE TABLE poc.inscricoes_disciplinas (
   FOREIGN KEY (id_inscricao) REFERENCES poc.inscricoes (id),
   FOREIGN KEY (id_disciplina) REFERENCES poc.disciplinas (id))
   ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  
+CREATE TABLE poc.alunos_disciplinas (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  id_aluno int(11) NOT NULL,
+  id_disciplina varchar(100) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY uni_aluno_disciplina (id_aluno, id_disciplina),
+  FOREIGN KEY (id_aluno) REFERENCES poc.alunos (id),
+  FOREIGN KEY (id_disciplina) REFERENCES poc.disciplinas (id))
+  ENGINE=InnoDB DEFAULT CHARSET=utf8;
