@@ -555,16 +555,6 @@ VALUES ('professor', 'ROLE_PROFESSOR');
 INSERT INTO user_roles (username, role)
 VALUES ('coordenador', 'ROLE_COORDENADOR');
 
-CREATE TABLE poc.turmas (
-   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `disciplina` varchar(100) NOT NULL,
-  `semestre` int(11) NOT NULL,
-  `capacidade` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  CONSTRAINT fk_disciplina FOREIGN KEY (disciplina) REFERENCES poc.disciplinas (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 CREATE TABLE poc.alunos (
 	id int(11) NOT NULL AUTO_INCREMENT,
 	nome varchar(100) NOT NULL,
@@ -605,3 +595,55 @@ CREATE TABLE poc.alunos_disciplinas (
   FOREIGN KEY (id_aluno) REFERENCES poc.alunos (id),
   FOREIGN KEY (id_disciplina) REFERENCES poc.disciplinas (id))
   ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ CREATE TABLE poc.professores (
+	id INT(11) NOT NULL AUTO_INCREMENT,
+	nome varchar(100) NOT NULL,
+	username varchar(45) NOT NULL,
+	CONSTRAINT professores_PK PRIMARY KEY (id),
+	CONSTRAINT professores_users_FK FOREIGN KEY (username) REFERENCES poc.users(username)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8
+COLLATE=utf8_general_ci ;
+
+CREATE TABLE poc.dias (
+	id INT(11) NOT NULL AUTO_INCREMENT,
+	nome varchar(50) NOT NULL,
+	CONSTRAINT Dia_PK PRIMARY KEY (id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8
+COLLATE=utf8_general_ci ;
+
+insert into poc.dias (nome)
+VALUES ('Segunda-feira'),
+('Terça-feira'),
+('Quarta-feira'),
+('Quinta-feira'),
+('Sexta-feira');
+
+CREATE TABLE poc.horarios (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	hora SMALLINT NOT NULL,
+	dia int(11) NOT NULL,
+	CONSTRAINT horarios_PK PRIMARY KEY (id),
+	CONSTRAINT horarios_dias_FK FOREIGN KEY (dia) REFERENCES poc.dias(id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8
+COLLATE=utf8_general_ci ;
+
+
+CREATE TABLE poc.turmas (
+   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `disciplina` varchar(100) NOT NULL,
+  `semestre` int(11) NOT NULL,
+  `capacidade` int(11) NOT NULL,
+  professor int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  CONSTRAINT fk_disciplina FOREIGN KEY (disciplina) REFERENCES poc.disciplinas (id),
+  CONSTRAINT turmas_professores_fk FOREIGN KEY (professor) REFERENCES poc.professores (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
