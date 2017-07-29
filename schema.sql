@@ -537,23 +537,42 @@ CREATE TABLE poc.user_roles (
   CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES poc.users (username))
   ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO users(username,password,enabled)
-VALUES ('aluno','aluno', true);
+INSERT INTO poc.users (username,password,enabled) VALUES 
+('ada','ada',1)
+,('aluno','aluno',1)
+,('cerf','cerf',1)
+,('church','church',1)
+,('cook','cook',1)
+,('coordenador','coordenador',1)
+,('dijkstra','dijkstra',1)
+,('engelbar','engelbar',1)
+,('godel','godel',1)
+,('kay','kay',1)
+,('kleene','kleene',1)
+,('knuth','knuth',1)
+;
 
-INSERT INTO users(username,password,enabled)
-VALUES ('professor','professor', true);
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('kay','ROLE_PROFESSOR') ;
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('ada','ROLE_PROFESSOR') ;
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('cerf','ROLE_PROFESSOR') ;
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('church','ROLE_PROFESSOR') ;
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('cook','ROLE_PROFESSOR') ;
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('dijkstra','ROLE_PROFESSOR') ;
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('engelbar','ROLE_PROFESSOR') ;
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('godel','ROLE_PROFESSOR') ;
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('kleene','ROLE_PROFESSOR') ;
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('knuth','ROLE_PROFESSOR') ;
 
-INSERT INTO users(username,password,enabled)
-VALUES ('coordenador','coordenador', true);
-
-INSERT INTO user_roles (username, role)
-VALUES ('aluno', 'ROLE_ALUNO');
-
-INSERT INTO user_roles (username, role)
-VALUES ('professor', 'ROLE_PROFESSOR');
-
-INSERT INTO user_roles (username, role)
-VALUES ('coordenador', 'ROLE_COORDENADOR');
 
 CREATE TABLE poc.alunos (
 	id int(11) NOT NULL AUTO_INCREMENT,
@@ -607,6 +626,27 @@ ENGINE=InnoDB
 DEFAULT CHARSET=utf8
 COLLATE=utf8_general_ci ;
 
+INSERT INTO poc.professores (nome,username)
+VALUES ('Ada Lovelace','ada') ;
+INSERT INTO poc.professores (nome,username)
+VALUES ('Vint Cerf','cerf') ;
+INSERT INTO poc.professores (nome,username)
+VALUES ('Alonzo Church','church') ;
+INSERT INTO poc.professores (nome,username)
+VALUES ('Stephen Cook','cook') ;
+INSERT INTO poc.professores (nome,username)
+VALUES ('Edsger Dijkstra','dijkstra') ;
+INSERT INTO poc.professores (nome,username)
+VALUES ('Douglas Engelbar','engelbar') ;
+INSERT INTO poc.professores (nome,username)
+VALUES ('Kurt Godel','godel') ;
+INSERT INTO poc.professores (nome,username)
+VALUES ('Alan Kay','kay') ;
+INSERT INTO poc.professores (nome,username)
+VALUES ('Stephen Cole Kleene','kleene') ;
+INSERT INTO poc.professores (nome,username)
+VALUES ('Donald Knuth','knuth') ;
+
 CREATE TABLE poc.dias (
 	id INT(11) NOT NULL AUTO_INCREMENT,
 	nome varchar(50) NOT NULL,
@@ -623,18 +663,6 @@ VALUES ('Segunda-feira'),
 ('Quinta-feira'),
 ('Sexta-feira');
 
-CREATE TABLE poc.horarios (
-	id int(11) NOT NULL AUTO_INCREMENT,
-	hora SMALLINT NOT NULL,
-	dia int(11) NOT NULL,
-	CONSTRAINT horarios_PK PRIMARY KEY (id),
-	CONSTRAINT horarios_dias_FK FOREIGN KEY (dia) REFERENCES poc.dias(id)
-)
-ENGINE=InnoDB
-DEFAULT CHARSET=utf8
-COLLATE=utf8_general_ci ;
-
-
 CREATE TABLE poc.turmas (
    `id` int(11) NOT NULL AUTO_INCREMENT,
   `disciplina` varchar(100) NOT NULL,
@@ -646,4 +674,59 @@ CREATE TABLE poc.turmas (
   CONSTRAINT fk_disciplina FOREIGN KEY (disciplina) REFERENCES poc.disciplinas (id),
   CONSTRAINT turmas_professores_fk FOREIGN KEY (professor) REFERENCES poc.professores (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
+VALUES ('020265',1,30,1) ;
+INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
+VALUES ('022667',1,30,2) ;
+INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
+VALUES ('025070',1,30,3) ;
+INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
+VALUES ('025593',1,30,4) ;
+INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
+VALUES ('083020',1,30,5) ;
+INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
+VALUES ('180050',1,30,6) ;
+INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
+VALUES ('370053',1,30,7) ;
+INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
+VALUES ('370053',1,30,8) ;
+INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
+VALUES ('027022',1,30,9) ;
+INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
+VALUES ('027090',1,30,10) ;
+
+CREATE TABLE poc.horarios (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hora` smallint(6) NOT NULL,
+  `dia` int(11) NOT NULL,
+  `turma` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `horarios_dias_FK` (`dia`),
+  KEY `horarios_turmas_FK` (`turma`),
+  CONSTRAINT `horarios_dias_FK` FOREIGN KEY (`dia`) REFERENCES poc.dias (`id`),
+  CONSTRAINT `horarios_turmas_FK` FOREIGN KEY (`turma`) REFERENCES poc.turmas (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO poc.horarios (hora,dia,turma)
+VALUES (7,1,1) ;
+INSERT INTO poc.horarios (hora,dia,turma)
+VALUES (7,2,2) ;
+INSERT INTO poc.horarios (hora,dia,turma)
+VALUES (7,3,3) ;
+INSERT INTO poc.horarios (hora,dia,turma)
+VALUES (12,1,4) ;
+INSERT INTO poc.horarios (hora,dia,turma)
+VALUES (13,2,5) ;
+INSERT INTO poc.horarios (hora,dia,turma)
+VALUES (13,3,6) ;
+INSERT INTO poc.horarios (hora,dia,turma)
+VALUES (14,4,7) ;
+INSERT INTO poc.horarios (hora,dia,turma)
+VALUES (15,5,8) ;
+INSERT INTO poc.horarios (hora,dia,turma)
+VALUES (16,5,9) ;
+INSERT INTO poc.horarios (hora,dia,turma)
+VALUES (8,1,10) ;
+
 
