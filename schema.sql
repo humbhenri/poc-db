@@ -10,6 +10,7 @@ CREATE TABLE poc.disciplinas (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE poc.disciplinas_requisitos (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_disciplina` varchar(100) NOT NULL,
@@ -519,7 +520,6 @@ INSERT INTO poc.disciplinas_requisitos (id_disciplina, id_requisito)
 INSERT INTO poc.disciplinas_requisitos (id_disciplina, id_requisito)
     VALUES ('025321', '021270');
 
-
 CREATE  TABLE poc.users (
   username VARCHAR(45) NOT NULL ,
   password VARCHAR(45) NOT NULL ,
@@ -566,7 +566,7 @@ CREATE TABLE poc.turmas (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE poc.alunos (
-	id BIGINT NOT NULL AUTO_INCREMENT,
+	id int(11) NOT NULL AUTO_INCREMENT,
 	nome varchar(100) NOT NULL,
 	username varchar(45) NOT NULL,
 	CONSTRAINT alunos_PK PRIMARY KEY (id),
@@ -578,3 +578,20 @@ DEFAULT CHARSET=utf8;
 INSERT INTO poc.alunos
 (id, nome, username)
 VALUES(1, 'Fulano da Silva', 'aluno');
+
+CREATE TABLE poc.inscricoes (
+   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `aluno` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT fk_inscricoes_alunos FOREIGN KEY (aluno) REFERENCES poc.alunos (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE poc.inscricoes_disciplinas (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  id_inscricao int(11) NOT NULL,
+  id_disciplina varchar(100) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY uni_inscricao_disciplina (id_inscricao,id_disciplina),
+  FOREIGN KEY (id_inscricao) REFERENCES poc.inscricoes (id),
+  FOREIGN KEY (id_disciplina) REFERENCES poc.disciplinas (id))
+  ENGINE=InnoDB DEFAULT CHARSET=utf8;
