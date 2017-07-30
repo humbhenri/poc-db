@@ -572,7 +572,10 @@ INSERT INTO poc.user_roles (username,`role`)
 VALUES ('kleene','ROLE_PROFESSOR') ;
 INSERT INTO poc.user_roles (username,`role`)
 VALUES ('knuth','ROLE_PROFESSOR') ;
-
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('aluno','ROLE_ALUNO') ;
+INSERT INTO poc.user_roles (username,`role`)
+VALUES ('coordenador','ROLE_COORDENADOR') ;
 
 CREATE TABLE poc.alunos (
 	id int(11) NOT NULL AUTO_INCREMENT,
@@ -595,16 +598,6 @@ CREATE TABLE poc.inscricoes (
   CONSTRAINT fk_inscricoes_alunos FOREIGN KEY (aluno) REFERENCES poc.alunos (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE poc.inscricoes_disciplinas (
-  id int(11) NOT NULL AUTO_INCREMENT,
-  id_inscricao int(11) NOT NULL,
-  id_disciplina varchar(100) NOT NULL,
-  PRIMARY KEY (id),
-  UNIQUE KEY uni_inscricao_disciplina (id_inscricao,id_disciplina),
-  FOREIGN KEY (id_inscricao) REFERENCES poc.inscricoes (id),
-  FOREIGN KEY (id_disciplina) REFERENCES poc.disciplinas (id))
-  ENGINE=InnoDB DEFAULT CHARSET=utf8;
-  
 CREATE TABLE poc.alunos_disciplinas (
   id int(11) NOT NULL AUTO_INCREMENT,
   id_aluno int(11) NOT NULL,
@@ -700,33 +693,77 @@ CREATE TABLE poc.horarios (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `hora` smallint(6) NOT NULL,
   `dia` int(11) NOT NULL,
-  `turma` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `horarios_dias_FK` (`dia`),
-  KEY `horarios_turmas_FK` (`turma`),
-  CONSTRAINT `horarios_dias_FK` FOREIGN KEY (`dia`) REFERENCES poc.dias (`id`),
-  CONSTRAINT `horarios_turmas_FK` FOREIGN KEY (`turma`) REFERENCES poc.turmas (`id`)
+  CONSTRAINT `horarios_dias_FK` FOREIGN KEY (`dia`) REFERENCES poc.dias (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO poc.horarios (hora,dia,turma)
-VALUES (7,1,1) ;
-INSERT INTO poc.horarios (hora,dia,turma)
-VALUES (7,2,2) ;
-INSERT INTO poc.horarios (hora,dia,turma)
-VALUES (7,3,3) ;
-INSERT INTO poc.horarios (hora,dia,turma)
-VALUES (12,1,4) ;
-INSERT INTO poc.horarios (hora,dia,turma)
-VALUES (13,2,5) ;
-INSERT INTO poc.horarios (hora,dia,turma)
-VALUES (13,3,6) ;
-INSERT INTO poc.horarios (hora,dia,turma)
-VALUES (14,4,7) ;
-INSERT INTO poc.horarios (hora,dia,turma)
-VALUES (15,5,8) ;
-INSERT INTO poc.horarios (hora,dia,turma)
-VALUES (16,5,9) ;
-INSERT INTO poc.horarios (hora,dia,turma)
-VALUES (8,1,10) ;
+CREATE TABLE poc.inscricoes_turmas (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	id_inscricao int(11) NOT NULL,
+	id_turma int(11) NOT NULL,
+	CONSTRAINT inscricoes_turmas_PK PRIMARY KEY (id),
+	CONSTRAINT inscricoes_turmas_inscricoes_FK FOREIGN KEY (id_inscricao) REFERENCES poc.inscricoes(id),
+	CONSTRAINT inscricoes_turmas_turmas_FK FOREIGN KEY (id_turma) REFERENCES poc.turmas(id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8
+COLLATE=utf8_general_ci ;
 
+CREATE TABLE poc.horarios_turmas (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	horario_id int(11) NOT NULL,
+	turma_id int(11) NOT NULL,
+	CONSTRAINT horarios_turmas_PK PRIMARY KEY (id),
+	CONSTRAINT horarios_turmas_horarios_FK FOREIGN KEY (horario_id) REFERENCES poc.horarios(id),
+	CONSTRAINT horarios_turmas_turmas_FK FOREIGN KEY (turma_id) REFERENCES poc.turmas(id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8
+COLLATE=utf8_general_ci ;
 
+INSERT INTO poc.horarios (id,hora,dia) VALUES 
+(1,7,1)
+,(2,7,2)
+,(3,7,3)
+,(4,7,4)
+,(5,7,5)
+,(6,10,1)
+,(7,10,2)
+,(8,10,3)
+,(9,10,4)
+,(10,10,5)
+,(11,13,1)
+,(12,13,2)
+,(13,13,3)
+,(14,13,4)
+,(15,13,5)
+,(16,16,1)
+,(17,16,2)
+,(18,16,3)
+,(19,16,4)
+,(20,16,5)
+;
+
+INSERT INTO poc.horarios_turmas (id,horario_id,turma_id) VALUES 
+(1,1,1)
+,(2,1,2)
+,(3,2,3)
+,(4,2,4)
+,(5,3,5)
+,(6,3,6)
+,(7,4,7)
+,(8,4,8)
+,(9,5,9)
+,(10,5,10)
+,(11,6,1)
+,(12,6,2)
+,(13,7,3)
+,(14,7,4)
+,(15,8,5)
+,(16,8,6)
+,(17,9,7)
+,(18,9,9)
+,(19,10,10)
+,(20,10,1)
+;
