@@ -683,7 +683,7 @@ VALUES ('180050',1,30,6) ;
 INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
 VALUES ('370053',1,30,7) ;
 INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
-VALUES ('370053',1,30,8) ;
+VALUES ('X00000',1,30,8) ;
 INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
 VALUES ('027022',1,30,9) ;
 INSERT INTO poc.turmas (disciplina,semestre,capacidade,professor)
