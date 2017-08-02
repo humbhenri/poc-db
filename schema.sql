@@ -767,3 +767,7 @@ INSERT INTO poc.horarios_turmas (id,horario_id,turma_id) VALUES
 ,(19,10,10)
 ,(20,10,1)
 ;
+
+ALTER TABLE poc.professores ADD telefone varchar(13) NULL ;
+ALTER TABLE poc.professores ADD endereco varchar(100) NULL ;
+ALTER TABLE poc.professores ADD nascimento DATE NULL ;
