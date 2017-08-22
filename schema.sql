@@ -30,11 +30,11 @@ VALUES ('020001', 'ORIENTACAO PROFISSIONAL EM COMPUTACAO', 2, 2, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('020338', 'INTRODU√á√ÉO √Ä L√ìGICA', 4, 4, 0, 0);
+VALUES ('020338', 'INTRODU«√O ¿ L”GICA', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('025070', 'CONSTRU√á√ÉO DE ALGORITMOS E PROGRAMA√á√ÉO', 8, 4, 4, 0);
+VALUES ('025070', 'CONSTRU«√O DE ALGORITMOS E PROGRAMA«√O', 8, 4, 4, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -42,7 +42,7 @@ VALUES ('081116', 'GEOMETRIA ANALITICA', 4, 3, 1, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('089109', 'C√ÅLCULO 1', 4, 4, 0, 0);
+VALUES ('089109', 'C¡LCULO 1', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -50,7 +50,7 @@ VALUES ('096130', 'FUNDAMENTOS DE FISICA PARA A COMPUTACAO', 4, 2, 2, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('201006', 'INTRODU√á√ÉO √Ä LINGUA BRASILEIRA DE SINAIS - LIBRAS I', 2, 2, 0, 0);
+VALUES ('201006', 'INTRODU«√O ¿ LINGUA BRASILEIRA DE SINAIS - LIBRAS I', 2, 2, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -62,11 +62,11 @@ VALUES ('024376', 'CIRCUITOS DIGITAIS', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('024384', 'LABORAT√ìRIO DE CIRCUITOS DIGITAIS', 2, 0, 2, 0);
+VALUES ('024384', 'LABORAT”RIO DE CIRCUITOS DIGITAIS', 2, 0, 2, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('025020', 'PROGRAMA√á√ÉO DE COMPUTADORES', 4, 3, 1, 0);
+VALUES ('025020', 'PROGRAMA«√O DE COMPUTADORES', 4, 3, 1, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -82,7 +82,7 @@ VALUES ('110124', 'MICROECONOMIA', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('112194', 'TEORIA DAS ORGANIZA√á√ïES', 4, 4, 0, 0);
+VALUES ('112194', 'TEORIA DAS ORGANIZA«’ES', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -98,7 +98,7 @@ VALUES ('180017', 'METODOS E TECNICAS DE PESQUISA', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('180025', 'FILOSOFIA DA CI√äNCIA', 4, 4, 0, 0);
+VALUES ('180025', 'FILOSOFIA DA CI NCIA', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -106,7 +106,7 @@ VALUES ('180041', 'INTRODUCAO A FILOSOFIA', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('370053', 'INTRODU√á√ÉO √Ä SOCIOLOGIA GERAL', 4, 4, 0, 0);
+VALUES ('370053', 'INTRODU«√O ¿ SOCIOLOGIA GERAL', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -142,7 +142,7 @@ VALUES ('062014', 'COMUNICACAO E EXPRESSAO', 4, 2, 2, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('083020', 'C√ÅLCULO NUM√âRICO', 4, 3, 1, 0);
+VALUES ('083020', 'C¡LCULO NUM…RICO', 4, 3, 1, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -174,7 +174,7 @@ VALUES ('022667', 'ORGANIZACAO E RECUPERACAO DA INFORMACAO', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('025089', 'PROJETO E AN√ÅLISE DE ALGORITMOS', 4, 4, 0, 0);
+VALUES ('025089', 'PROJETO E AN¡LISE DE ALGORITMOS', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -186,15 +186,15 @@ VALUES ('025666', 'ENGENHARIA DE SOFTWARE 1', 4, 2, 2, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('027375', 'ARQUITETURA E ORGANIZA√á√ÉO DE COMPUTADORES 2', 4, 4, 0, 0);
+VALUES ('027375', 'ARQUITETURA E ORGANIZA«√O DE COMPUTADORES 2', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('027383', 'LABORAT√ìRIO DE ARQUITETURA E ORGANIZA√á√ÉO DE COMPUTADORES 2', 2, 0, 2, 0);
+VALUES ('027383', 'LABORAT”RIO DE ARQUITETURA E ORGANIZA«√O DE COMPUTADORES 2', 2, 0, 2, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('021130', 'CONSTRU√á√ÉO DE COMPILADORES 1', 4, 4, 0, 0);
+VALUES ('021130', 'CONSTRU«√O DE COMPILADORES 1', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -214,15 +214,15 @@ VALUES ('025674', 'ENGENHARIA DE SOFTWARE 2', 4, 2, 2, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('026093', 'PROJETO ACAD√äMICO EM COMPUTA√á√ÉO', 2, 1, 1, 0);
+VALUES ('026093', 'PROJETO ACAD MICO EM COMPUTA«√O', 2, 1, 1, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('301540', 'ADMINISTRA√á√ÉO DE EMPRESAS 1', 4, 4, 0, 0);
+VALUES ('301540', 'ADMINISTRA«√O DE EMPRESAS 1', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('021148', 'CONSTRU√á√ÉO DE COMPILADORES 2', 4, 1, 3, 0);
+VALUES ('021148', 'CONSTRU«√O DE COMPILADORES 2', 4, 1, 3, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -234,7 +234,7 @@ VALUES ('021288', 'SISTEMAS OPERACIONAIS 2', 4, 2, 2, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('022705', 'INTELIG√äNCIA ARTIFICIAL', 4, 3, 1, 0);
+VALUES ('022705', 'INTELIG NCIA ARTIFICIAL', 4, 3, 1, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -242,7 +242,7 @@ VALUES ('025232', 'PROJETO DE BANCO DE DADOS', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('025526', 'COMPUTA√á√ÉO GR√ÅFICA E MULTIM√çDIA', 4, 2, 2, 0);
+VALUES ('025526', 'COMPUTA«√O GR¡FICA E MULTIMÕDIA', 4, 2, 2, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -282,15 +282,15 @@ VALUES ('027260', 'PROJETO E MANUFATURA ASSISTIDOS POR COMPUTADOR', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('027278', 'MICROCONTROLADORES E APLICA√á√ïES', 4, 4, 0, 0);
+VALUES ('027278', 'MICROCONTROLADORES E APLICA«’ES', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('027286', 'LABORAT√ìRIO DE MICROCONTROLADORES E APLICA√á√ïES', 2, 0, 2, 0);
+VALUES ('027286', 'LABORAT”RIO DE MICROCONTROLADORES E APLICA«’ES', 2, 0, 2, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('027430', 'TECNOLOGIA E COMUNICA√á√ÉO DE DADOS', 4, 3, 1, 0);
+VALUES ('027430', 'TECNOLOGIA E COMUNICA«√O DE DADOS', 4, 3, 1, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -298,19 +298,19 @@ VALUES ('027448', 'ARQUITETURA DE SISTEMAS COMPUTACIONAIS DE ALTO DESEMPENHO', 4
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('027456', 'AN√ÅLISE DE DESEMPENHO DE SISTEMAS COMPUTACIONAIS', 4, 3, 1, 0);
+VALUES ('027456', 'AN¡LISE DE DESEMPENHO DE SISTEMAS COMPUTACIONAIS', 4, 3, 1, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('027464', 'INTRODU√á√ÉO √Ä BIOINFORM√ÅTICA', 4, 0, 4, 0);
+VALUES ('027464', 'INTRODU«√O ¿ BIOINFORM¡TICA', 4, 0, 4, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('027499', 'EMPREENDEDORISMO E DESENVOLVIMENTO DE NEG√ìCIOS', 4, 2, 2, 0);
+VALUES ('027499', 'EMPREENDEDORISMO E DESENVOLVIMENTO DE NEG”CIOS', 4, 2, 2, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('029009', 'METODOLOGIA CIENT√çFICA E GERENCIAMENTO DE PROJETOS', 4, 3, 1, 0);
+VALUES ('029009', 'METODOLOGIA CIENTÕFICA E GERENCIAMENTO DE PROJETOS', 4, 3, 1, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -318,11 +318,11 @@ VALUES ('281190', 'TEORIAS DOS JOGOS', 2, 2, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('020290', 'T√ìPICOS AVAN√áADOS A', 4, 4, 0, 0);
+VALUES ('020290', 'T”PICOS AVAN«ADOS A', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('020362', 'T√ìPICOS AVAN√áADOS B', 4, 4, 0, 0);
+VALUES ('020362', 'T”PICOS AVAN«ADOS B', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -330,7 +330,7 @@ VALUES ('020680', 'DESENVOLVIMENTO DE SOFTWARE PARA A WEB', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('023582', 'MATEM√ÅTICA COMPUTACIONAL', 4, 4, 0, 0);
+VALUES ('023582', 'MATEM¡TICA COMPUTACIONAL', 4, 4, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -342,11 +342,11 @@ VALUES ('026182', 'TRABALHO DE GRADUACAO', 26, 0, 26, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('026190', 'EST√ÅGIO EM COMPUTA√á√ÉO', 24, 0, 0, 24);
+VALUES ('026190', 'EST¡GIO EM COMPUTA«√O', 24, 0, 0, 24);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
-VALUES ('026239', 'SEMIN√ÅRIOS EM COMPUTA√á√ÉO', 2, 2, 0, 0);
+VALUES ('026239', 'SEMIN¡RIOS EM COMPUTA«√O', 2, 2, 0, 0);
 
 
 INSERT INTO poc.disciplinas(id, nome, creditos, aulas, laboratorios, estagios) 
@@ -651,7 +651,7 @@ COLLATE=utf8_general_ci ;
 
 insert into poc.dias (nome)
 VALUES ('Segunda-feira'),
-('Ter√ßa-feira'),
+('TerÁa-feira'),
 ('Quarta-feira'),
 ('Quinta-feira'),
 ('Sexta-feira');
@@ -771,3 +771,25 @@ INSERT INTO poc.horarios_turmas (id,horario_id,turma_id) VALUES
 ALTER TABLE poc.professores ADD telefone varchar(13) NULL ;
 ALTER TABLE poc.professores ADD endereco varchar(100) NULL ;
 ALTER TABLE poc.professores ADD nascimento DATE NULL ;
+
+INSERT INTO poc.users(username, password, enabled) VALUES('professor', 'professor', 1);
+
+INSERT INTO `poc`.`professores` (`nome`, `username`) VALUES ('Professor Teste', 'professor');
+
+INSERT INTO `poc`.`turmas` (`disciplina`, `semestre`, `capacidade`, `professor`) VALUES ('027456', '1', '30', '12');
+
+INSERT INTO `poc`.`user_roles` (`username`, `role`) VALUES ('professor', 'ROLE_PROFESSOR');
+
+CREATE TABLE `alunos_turmas` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`id_aluno` INT NOT NULL DEFAULT '0',
+	`id_turma` INT NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`),
+	CONSTRAINT `FK__alunos` FOREIGN KEY (`id_aluno`) REFERENCES `alunos` (`id`),
+	CONSTRAINT `FK__turmas` FOREIGN KEY (`id_turma`) REFERENCES `turmas` (`id`)
+)
+COMMENT='Mostra em quais turmas os alunos est„o matriculados'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
