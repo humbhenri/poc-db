@@ -800,3 +800,7 @@ INSERT INTO `poc`.`alunos_turmas` (`id_aluno`, `id_turma`) VALUES ('1', '11');
 INSERT INTO `poc`.`alunos_turmas` (`id_aluno`, `id_turma`) VALUES ('2', '11');
 INSERT INTO `poc`.`alunos_turmas` (`id_aluno`, `id_turma`) VALUES ('3', '11');
 INSERT INTO `poc`.`alunos_turmas` (`id_aluno`, `id_turma`) VALUES ('4', '11');
+
+ALTER TABLE `alunos_turmas`
+	ADD COLUMN `nota` INT(11) NULL DEFAULT '0' AFTER `id_turma`;
+	
